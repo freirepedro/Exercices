@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class fibonacci {
+	public static void main(String[] args) {
+		int i = 1;
+		int n;
+		int r = 1;
+		boolean loop = true;
+		int l;
+		System.out.println("Digite um valor: ");
+		while (loop == true) {
+			Scanner print = new Scanner(System.in);
+			n = print.nextInt();
+			System.out.print("F(" + n + "): ");
+			while (i <= n) {
+				r = r * i;
+				i++;
+			}
+			System.out.println(r);
+			r = 1;
+			i = 1;
+			System.out.println("Novamente? (1 para interromper/qualquer outro número para  continuar)");
+			l = print.nextInt();
+			if (l == 1) {
+				loop = false;
+			} else {
+				System.out.println("Digite um novo valor: ");
+			}
+
+		}
+
+	}
+}
