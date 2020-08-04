@@ -1,0 +1,67 @@
+package jokenpo;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class jokenpo 
+{
+	private Random r = new Random();
+	private Scanner s = new Scanner(System.in);
+	
+	private int escolhaAleatoria()
+	{
+		return r.nextInt(2);
+	}
+	private void escolherGanhador(int escolhaJogador)
+	{
+		int escolhaMaquina = escolhaAleatoria();
+		if (escolhaMaquina == 0 && escolhaJogador == 0 )
+		{
+			System.out.println("A Máquina escolheu Pedra e Você escolheu Pedra! Empate!");
+		}
+		if (escolhaMaquina == 1 && escolhaJogador == 0 )
+		{
+			System.out.println("A Máquina escolheu Papel e Você escolheu Pedra! A Máquina ganhou!");
+		}
+		if (escolhaMaquina == 2 && escolhaJogador == 0 )
+		{
+			System.out.println("A Máquina escolheu Tesoura e Você escolheu Pedra! Você ganhou!");
+		}
+		if (escolhaMaquina == 0 && escolhaJogador == 1 )
+		{
+			System.out.println("A Máquina escolheu Pedra e Você escolheu Papel! Você ganhou!");
+		}
+		if (escolhaMaquina == 0 && escolhaJogador == 2 )
+		{
+			System.out.println("A Máquina escolheu Papel e Você escolheu Papel! Empate!");
+		}
+		if (escolhaMaquina == 1 && escolhaJogador == 1 )
+		{
+			System.out.println("A Máquina escolheu Tesoura e Você escolheu Papel! A Máquina ganhou!");
+		}
+		if (escolhaMaquina == 2 && escolhaJogador == 1 )
+		{
+			System.out.println("A Máquina escolheu Tesoura e Você escolheu Papel! A Máquina ganhou!");
+		}
+		if (escolhaMaquina == 1 && escolhaJogador == 2 )
+		{
+			System.out.println("A Máquina escolheu Papel e Você escolheu Tesoura! Você ganhou!");
+		}
+		if (escolhaMaquina == 2 && escolhaJogador == 2 )
+		{
+			System.out.println("A Máquina escolheu Tesoura e Você escolheu Tesoura! Empate!");
+		}
+	}
+	public void Game()
+	{
+		int escolha;
+		System.out.println("____________________");
+		System.out.println("Escolha a opção!");
+		System.out.println("1 - Pedra");
+		System.out.println("2 - Papel");
+		System.out.println("3- Tesoura");
+		System.out.println("____________________");	
+		escolha = s.nextInt() - 1;
+		escolherGanhador(escolha);
+	}
+}
