@@ -1,0 +1,80 @@
+public abstract class Funcionario 
+{
+	protected String nome;
+	protected String CPF;
+	protected double salario;
+	
+	Funcionario()
+	{
+		this.nome = "joe doe";
+		this.CPF = "123456";
+		this.salario = 123.45;
+	}
+	
+	public abstract double calcBonus();
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCPF() {
+		return CPF;
+	}
+
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}	
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+public class Gerente extends Funcionario 
+{
+	private int senha;
+	
+	Gerente()
+	{
+		//super(nome, CPF, salario);
+		this.senha = 12345678;
+	}
+	
+	public double calcBonus()
+	{
+		return salario*0.12;
+	}
+	
+	public void Acesso(int senha)
+	{
+		if (senha == this.senha)
+		{
+			System.out.println("Acesso Permitido!");
+		}
+		else 
+		{
+			System.out.println("Acesso Negado!");
+		}
+	}
+	
+}
+
